@@ -13,6 +13,10 @@ db = mysql.connector.connect(
     database="posdb"
 )
 
+@app.route('/')
+def index():
+    return 'Barcode Scanner is Active and running!'
+
 @app.route('/scan', methods=['POST'])
 def scan_product():
     data = request.json
